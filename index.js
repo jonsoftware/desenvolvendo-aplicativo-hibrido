@@ -60,6 +60,7 @@ const app = express();
 // 🎨 CONFIGURAÇÃO DO TEMPLATE ENGINE
 // ============================================================================
 
+
 // Configuração do EJS como template engine
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views'));
@@ -80,6 +81,8 @@ app.use(cors({
     methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
     allowedHeaders: ['Content-Type', 'Authorization', 'X-Requested-With']
 }));
+
+app.use(express.static('public'));
 
 // Middleware para parsing de JSON
 app.use(express.json({ 
